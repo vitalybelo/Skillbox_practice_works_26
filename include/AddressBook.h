@@ -1,0 +1,14 @@
+//
+// Created by vital on 14.11.2022.
+//
+
+#ifndef SKILLBOX_PRACTICE_WORKS_26_ADDRESSBOOK_H
+#define SKILLBOX_PRACTICE_WORKS_26_ADDRESSBOOK_H
+
+
+class AddressBook {
+
+};
+
+
+#endif //SKILLBOX_PRACTICE_WORKS_26_ADDRESSBOOK_H

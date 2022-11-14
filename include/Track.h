@@ -5,12 +5,13 @@ class Track {
     private:
 
     std::string name;
-    tm* recordDate;
+    tm recordDate;
     int duration;
 
     public:
 
-    Track(const std::string& name, int duration);
+    Track(const std::string& name, int duration, std::string date_string);
 
-    friend ostream &operator<<(ostream &os, const Track &track);
+    friend std::ostream &operator<<(std::ostream &os, const Track &track);
+
 };

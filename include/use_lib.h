@@ -1,13 +1,9 @@
 #pragma once
-#include <iostream>
-#include <random>
 #include "windows.h"
-using namespace std;
 
-
-string getCommand() {
-    string command;
-    getline(cin,command);
+std::string getCommand() {
+    std::string command;
+    getline(std::cin,command);
     for (char & i : command) {
         i = (char) tolower(i);
     }
@@ -15,7 +11,7 @@ string getCommand() {
 }
 
 void clearStdin () {
-    cin.clear();
+    std::cin.clear();
     fflush(stdin);
 }
 void setlocaleRus () {
@@ -28,11 +24,24 @@ void setlocale1251 () {
     SetConsoleOutputCP(1251);
 }
 
-int random_nextInt (const int from, const int to) {
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dist(from,to);
+int irandom_next (const int from, const int to) {
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dist(from, to);
 
     return dist(gen);
     //return (int)gen();
 }
+
+tm get_TMDate (std::string date_string) {
+    time_t t = time(nullptr);
+    tm now = *localtime(&t);
+    replace(date_string.begin(), date_string.end(), '/', ' ');
+    if (std::istringstream(date_string) >> now.tm_mday >> now.tm_mon >> now.tm_year) {
+        now.tm_mon -= 1;
+        now.tm_year -= 1900;
+    }
+    return now;
+}
+

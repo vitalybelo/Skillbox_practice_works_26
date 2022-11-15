@@ -1,14 +1,17 @@
-//
-// Created by vital on 14.11.2022.
-//
-
-#ifndef SKILLBOX_PRACTICE_WORKS_26_ADDRESSBOOK_H
-#define SKILLBOX_PRACTICE_WORKS_26_ADDRESSBOOK_H
-
+#pragma once
 
 class AddressBook {
 
+    private:
+
+    std::map<std::string, std::string> addressBook{};
+
+    public:
+
+    bool add();
+    bool phoneNumberPuzzle (std::string number);
+    std::map<std::string, std::string> get();
+
+
 };
 
-
-#endif //SKILLBOX_PRACTICE_WORKS_26_ADDRESSBOOK_H

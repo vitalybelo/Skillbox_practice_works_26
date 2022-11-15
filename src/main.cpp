@@ -9,8 +9,8 @@
 #include "Track.cpp"
 #include "Player.cpp"
 #include "AddressBook.cpp"
+#include "Phone.cpp"
 #include "skillbox_work26_task1.cpp"
-using namespace std;
 
 int main() {
     setlocale1251();
@@ -28,11 +28,22 @@ int main() {
 //    cout << "ÇÀÄÀÍÈÅ ¹1\n";
 //    skillbox_work26_task1();
 
-    AddressBook addressBook;
+    Phone phone;
 
-    addressBook.add();
+    do {
+        clearStdin();
+        std::cout << "\nÂâåäèòå êîìàíäó: ";
+        phone.command = getCommand();
+        if (phone.command == "add") {
+            phone.addContact();
+        } else if (phone.command == "see") {
+            phone.displayAddressBook();
+        } else if (phone.command == "call") {
+            phone
+        }
 
-    cout << addressBook.get().size() << endl;
+
+    } while (phone.command != "exit");
 
     return 0;
 }

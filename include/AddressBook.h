@@ -1,17 +1,27 @@
 #pragma once
 
+struct Contact {
+
+    std::string name;
+    std::string phone;
+};
+
 class AddressBook {
 
     private:
 
-    std::map<std::string, std::string> addressBook{};
+    std::vector<Contact> addressBook;
 
     public:
 
-    bool add();
-    bool phoneNumberPuzzle (std::string number);
-    std::map<std::string, std::string> get();
+    static std::string dialogName();
+    static std::string dialogPhone();
+    static bool phoneNumberPuzzle(std::string& number);
 
+    bool add();
+    void display();
+    int findByName(std::string& name);
+    int findByPhone(std::string& phone);
 
 };
 

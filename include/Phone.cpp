@@ -14,9 +14,9 @@ void Phone::displayAddressBook()
 Contact Phone::dialogContact() {
 
     Contact contact{"",""};
-    contact.name = AddressBook::dialogName("Введите имя абонента (ENTER - пропустить): ");
+    contact.name = AddressBook::dialogName("Р’РІРµРґРёС‚Рµ РёРјСЏ Р°Р±РѕРЅРµРЅС‚Р° (ENTER - РїСЂРѕРїСѓСЃС‚РёС‚СЊ): ");
     if (contact.name.empty()) {
-        contact.phone = AddressBook::dialogPhone("Введите номер телефона <10 цифр> (ENTER - пропустить): ");
+        contact.phone = AddressBook::dialogPhone("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° <10 С†РёС„СЂ> (ENTER - РїСЂРѕРїСѓСЃС‚РёС‚СЊ): ");
     }
     return contact;
 }
@@ -25,23 +25,23 @@ void Phone::actionContact(std::string command)
 {
     Contact contact = dialogContact();
     if (contact.name.empty() && contact.phone.empty()) {
-        std::cout << "\n*** Команда отменена ***\n";
+        std::cout << "\n*** РљРѕРјР°РЅРґР° РѕС‚РјРµРЅРµРЅР° ***\n";
         return;
     }
     if (!contact.name.empty()) {
-        // звонок по имени из телефонной книги
+        // Р·РІРѕРЅРѕРє РїРѕ РёРјРµРЅРё РёР· С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё
         if (addressBook.empty()) {
-            std::cout << "\n*** Телефонная книга пуста ***\n";
+            std::cout << "\n*** РўРµР»РµС„РѕРЅРЅР°СЏ РєРЅРёРіР° РїСѓСЃС‚Р° ***\n";
             return;
         }
         int index = addressBook.findByName(contact.name);
         if (index == -1 ) {
-            std::cout << "\n*** Запись с таким именем не найдена ***\n";
+            std::cout << "\n*** Р—Р°РїРёСЃСЊ СЃ С‚Р°РєРёРј РёРјРµРЅРµРј РЅРµ РЅР°Р№РґРµРЅР° ***\n";
             return;
         }
         contact = addressBook.get(index);
     } else {
-        // звонок по номеру телефона
+        // Р·РІРѕРЅРѕРє РїРѕ РЅРѕРјРµСЂСѓ С‚РµР»РµС„РѕРЅР°
         int index = addressBook.findByPhone(contact.phone);
         if (index >= 0) {
             contact = addressBook.get(index);

@@ -31,7 +31,7 @@ std::string AddressBook::dialogPhone(std::string query)
         clearStdin();
         std::getline(std::cin, phone);
         if (phone.empty() || phoneNumberPuzzle(phone)) break;
-        std::cout << "Нужно <только 10 цифр> попробуйте еще раз: ";
+        std::cout << "РќСѓР¶РЅРѕ <С‚РѕР»СЊРєРѕ 10 С†РёС„СЂ> РїРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·: ";
     } while (true);
 
     return phone;
@@ -41,13 +41,13 @@ bool AddressBook::add()
 {
     Contact contact;
 
-    contact.name = dialogName("Введите имя абонента: ");
+    contact.name = dialogName("Р’РІРµРґРёС‚Рµ РёРјСЏ Р°Р±РѕРЅРµРЅС‚Р°: ");
     if (contact.name.empty()) return false;
 
-    contact.phone = dialogPhone("Введите номер телефона <10 цифр>: ");
+    contact.phone = dialogPhone("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° <10 С†РёС„СЂ>: ");
     if (contact.phone.empty()) return false;
 
-    //std::cout << "\nПринято: Имя: " << contact.name << ",  номер: " << contact.phone << std::endl;
+    //std::cout << "\nРџСЂРёРЅСЏС‚Рѕ: РРјСЏ: " << contact.name << ",  РЅРѕРјРµСЂ: " << contact.phone << std::endl;
     addressBook.push_back(contact);
     return true;
 }
@@ -71,12 +71,12 @@ int AddressBook::findByPhone(std::string& phone)
 void AddressBook::display()
 {
     if (addressBook.empty()) {
-        std::cout << "\n*** список абонентов пустой ***\n";
+        std::cout << "\n*** СЃРїРёСЃРѕРє Р°Р±РѕРЅРµРЅС‚РѕРІ РїСѓСЃС‚РѕР№ ***\n";
         return;
     }
-    std::cout << "\nсписок абонентов:\n";
+    std::cout << "\nСЃРїРёСЃРѕРє Р°Р±РѕРЅРµРЅС‚РѕРІ:\n";
     for (Contact &contact: addressBook) {
-        printf("Абонент:  %-20s :: %s\n", contact.name.c_str(), contact.phone.c_str());
+        printf("РђР±РѕРЅРµРЅС‚:  %-20s :: %s\n", contact.name.c_str(), contact.phone.c_str());
     }
 }
 

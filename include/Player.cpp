@@ -9,11 +9,11 @@ Player::Player(const std::vector<Track> &tracks) : tracks(tracks)
 void Player::play()
 {
     if (isPause) {
-        // продолжаем воспроизведение после паузы
-        std::cout << "\n*** продолжается ***";
+        // РїСЂРѕРґРѕР»Р¶Р°РµРј РІРѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёРµ РїРѕСЃР»Рµ РїР°СѓР·С‹
+        std::cout << "\n*** РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ ***";
         isPause = false;
     } else {
-        // выбор трека в зависимости от continuous или shuffle
+        // РІС‹Р±РѕСЂ С‚СЂРµРєР° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ continuous РёР»Рё shuffle
         if (!isPlay) {
             if (isShuffle) {
                 trackPlay = irandom_next(0, trackLast);
@@ -23,23 +23,23 @@ void Player::play()
             }
             isPlay = true;
         } else {
-            // нажатие play повторно - уведомляем, не реагируем
-            std::cout << "\n*** Не сработало ***";
+            // РЅР°Р¶Р°С‚РёРµ play РїРѕРІС‚РѕСЂРЅРѕ - СѓРІРµРґРѕРјР»СЏРµРј, РЅРµ СЂРµР°РіРёСЂСѓРµРј
+            std::cout << "\n*** РќРµ СЃСЂР°Р±РѕС‚Р°Р»Рѕ ***";
         }
     }
 
-    std::cout << "\nВоспроизведение песни:\n";
+    std::cout << "\nР’РѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёРµ РїРµСЃРЅРё:\n";
     std::cout << tracks.at(trackPlay) << std::endl;
 }
 
 void Player::pause()
 {
     if (!isPause && isPlay) {
-        std::cout << "\n*** Установлена пауза для трека ***\n";
+        std::cout << "\n*** РЈСЃС‚Р°РЅРѕРІР»РµРЅР° РїР°СѓР·Р° РґР»СЏ С‚СЂРµРєР° ***\n";
         std::cout << tracks.at(trackPlay) << std::endl;
         isPause = true;
     } else {
-        std::cout << "\n*** Не сработало ***\n";
+        std::cout << "\n*** РќРµ СЃСЂР°Р±РѕС‚Р°Р»Рѕ ***\n";
     }
 }
 
@@ -48,29 +48,29 @@ void Player::stop()
     if (isPlay) {
         isPause = false;
         isPlay = false;
-        std::cout << "\n*** Остановлено воспроизведение ***\n";
+        std::cout << "\n*** РћСЃС‚Р°РЅРѕРІР»РµРЅРѕ РІРѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёРµ ***\n";
         std::cout << tracks.at(trackPlay) << std::endl;
     } else {
-        std::cout << "\n*** Не сработало ***\n";
+        std::cout << "\n*** РќРµ СЃСЂР°Р±РѕС‚Р°Р»Рѕ ***\n";
     }
 }
 
 void Player::shuffle()
 {
     isShuffle = !isShuffle;
-    std::cout << "Выбран режим: ";
+    std::cout << "Р’С‹Р±СЂР°РЅ СЂРµР¶РёРј: ";
     std::cout << (isShuffle ? "Shuffle" : "Continuous") << std::endl;
 }
 
 void Player::display() const
 {
-    std::cout << "\n*** Состояние плеера ***";
-    std::cout << "\nВоспроизведение: ";
-    std::cout << (isPlay ? "номер трека " + std::to_string(trackPlay) : "остановлено");
+    std::cout << "\n*** РЎРѕСЃС‚РѕСЏРЅРёРµ РїР»РµРµСЂР° ***";
+    std::cout << "\nР’РѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёРµ: ";
+    std::cout << (isPlay ? "РЅРѕРјРµСЂ С‚СЂРµРєР° " + std::to_string(trackPlay) : "РѕСЃС‚Р°РЅРѕРІР»РµРЅРѕ");
     if (isPlay)
         std::cout << (isPause ? " (PAUSED)" : " (PLAYING)");
-    std::cout << "\nКоличество загруженных треков: " << (trackLast + 1);
-    std::cout << "\nРежим воспроизведения: ";
+    std::cout << "\nРљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РіСЂСѓР¶РµРЅРЅС‹С… С‚СЂРµРєРѕРІ: " << (trackLast + 1);
+    std::cout << "\nР РµР¶РёРј РІРѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёСЏ: ";
     std::cout << (isShuffle ? "Shuffle" : "Continuous") << std::endl;
 }
 

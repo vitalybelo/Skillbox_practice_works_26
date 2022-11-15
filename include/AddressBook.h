@@ -14,13 +14,14 @@ class AddressBook {
 
     public:
 
-    static std::string dialogName();
-    static std::string dialogPhone();
+    static std::string dialogName(std::string query);
+    static std::string dialogPhone(std::string query);
     static bool phoneNumberPuzzle(std::string& number);
 
     bool add();
     void display();
     bool empty();
+    Contact get(int index);
     int findByName(std::string& name);
     int findByPhone(std::string& phone);
 

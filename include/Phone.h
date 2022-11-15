@@ -10,7 +10,7 @@ class Phone {
 
     void addContact();
     void displayAddressBook();
-    Contact dialogContact();
-    void callContact();
+    static Contact dialogContact();
+    void actionContact(std::string command);
 
 };

@@ -34,14 +34,16 @@ int main() {
         clearStdin();
         std::cout << "\n¬ведите команду: ";
         phone.command = getCommand();
+
         if (phone.command == "add") {
             phone.addContact();
         } else if (phone.command == "see") {
             phone.displayAddressBook();
         } else if (phone.command == "call") {
-            phone.callContact();
+            phone.actionContact("CALL");
+        } else if (phone.command == "sms") {
+            phone.actionContact("SMS");
         }
-
 
     } while (phone.command != "exit");
 

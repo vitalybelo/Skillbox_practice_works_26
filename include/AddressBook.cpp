@@ -15,18 +15,18 @@ bool AddressBook::phoneNumberPuzzle(std::string& number)
     return true;
 }
 
-std::string AddressBook::dialogName()
+std::string AddressBook::dialogName(std::string query)
 {
     std::string name;
-    std::cout << "Введите имя абонента: ";
+    std::cout << query;
     std::getline(std::cin, name);
     return name;
 }
 
-std::string AddressBook::dialogPhone()
+std::string AddressBook::dialogPhone(std::string query)
 {
     std::string phone;
-    std::cout << "Введите номер телефона <10 цифр>: ";
+    std::cout << query;
     do {
         clearStdin();
         std::getline(std::cin, phone);
@@ -41,13 +41,13 @@ bool AddressBook::add()
 {
     Contact contact;
 
-    contact.name = dialogName();
+    contact.name = dialogName("Введите имя абонента: ");
     if (contact.name.empty()) return false;
 
-    contact.phone = dialogPhone();
+    contact.phone = dialogPhone("Введите номер телефона <10 цифр>: ");
     if (contact.phone.empty()) return false;
 
-    std::cout << "\nПринято: Имя: " << contact.name << ",  номер: " << contact.phone << std::endl;
+    //std::cout << "\nПринято: Имя: " << contact.name << ",  номер: " << contact.phone << std::endl;
     addressBook.push_back(contact);
     return true;
 }
@@ -71,10 +71,10 @@ int AddressBook::findByPhone(std::string& phone)
 void AddressBook::display()
 {
     if (addressBook.empty()) {
-        std::cout << "\nАдресная книга пустая:\n";
+        std::cout << "\n*** список абонентов пустой ***\n";
         return;
     }
-    std::cout << "\nАдресная книга:\n\n";
+    std::cout << "\nсписок абонентов:\n";
     for (Contact &contact: addressBook) {
         printf("Абонент:  %-20s :: %s\n", contact.name.c_str(), contact.phone.c_str());
     }
@@ -84,6 +84,15 @@ bool AddressBook::empty()
 {
     if (addressBook.empty()) return true;
     return false;
+}
+
+Contact AddressBook::get(int index)
+{
+    Contact contact{"", ""};
+    if (index >= 0 && index < addressBook.size()) {
+        contact = addressBook.at(index);
+    }
+    return contact;
 }
 
 

@@ -11,6 +11,8 @@
 #include "AddressBook.cpp"
 #include "Phone.cpp"
 #include "skillbox_work26_task1.cpp"
+#include "skillbox_work26_task2.cpp"
+
 
 int main() {
     setlocale1251();
@@ -24,28 +26,22 @@ int main() {
      * MODE - переключение режима воспроизведения: случайный или последовательный выбор трека
      * INFO - отображение состояния плеера
      * OFF - выключение плеера, и выход
-    */
-//    cout << "ЗАДАНИЕ №1\n";
-//    skillbox_work26_task1();
+     */
+    std::cout << "\nЗАДАНИЕ №1\n";
+    skillbox_work26_task1();
 
-    Phone phone;
 
-    do {
-        clearStdin();
-        std::cout << "\nВведите команду: ";
-        phone.command = getCommand();
+    /**
+     * ЗАДАНИЕ №2:
+     * ADD - добавление контакта в книгу телефона
+     * SEE - просмотр списка абонентов телефона
+     * SMS - отправка смс абоненту по имени из списка или по номеру телефона
+     * CALL - звонок абоненту по имени из списка или по номеру телефона
+     * EXIT - выход
+     */
+    std::cout << "\nЗАДАНИЕ №2\n";
+    skillbox_work26_task2();
 
-        if (phone.command == "add") {
-            phone.addContact();
-        } else if (phone.command == "see") {
-            phone.displayAddressBook();
-        } else if (phone.command == "call") {
-            phone.actionContact("CALL");
-        } else if (phone.command == "sms") {
-            phone.actionContact("SMS");
-        }
-
-    } while (phone.command != "exit");
 
     return 0;
 }

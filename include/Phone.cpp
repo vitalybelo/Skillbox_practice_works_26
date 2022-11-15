@@ -46,7 +46,7 @@ void Phone::actionContact(std::string command)
         if (index >= 0) {
             contact = addressBook.get(index);
         } else {
-            contact.name = "UNKNOWN"
+            contact.name = "OFF_lIST";
         }
         std::cout << "\n" << command <<"-> " << contact.name << " :: " << contact.phone << std::endl;
     }

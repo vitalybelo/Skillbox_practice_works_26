@@ -80,6 +80,12 @@ void AddressBook::display()
     }
 }
 
+bool AddressBook::empty()
+{
+    if (addressBook.empty()) return true;
+    return false;
+}
+
 
 
 

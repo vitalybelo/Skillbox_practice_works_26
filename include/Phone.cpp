@@ -23,8 +23,15 @@ Contact Phone::dialogContact() {
 
 void Phone::callContact()
 {
+    if (addressBook.empty()) {
+        std::cout << "\n*** Телефонная книга пуста ***\n";
+    }
     Contact contact = dialogContact();
     if (contact.name.empty() && contact.phone.empty()) {
+        std::cout << "\n*** Команда отменена ***\n";
+    } else {
+
+
 
     }
 }

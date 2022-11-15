@@ -20,6 +20,7 @@ class AddressBook {
 
     bool add();
     void display();
+    bool empty();
     int findByName(std::string& name);
     int findByPhone(std::string& phone);
 

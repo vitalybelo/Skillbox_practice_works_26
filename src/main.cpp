@@ -39,7 +39,7 @@ int main() {
         } else if (phone.command == "see") {
             phone.displayAddressBook();
         } else if (phone.command == "call") {
-            phone
+            phone.callContact();
         }
 
 

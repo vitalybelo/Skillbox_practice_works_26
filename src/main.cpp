@@ -1,22 +1,18 @@
 #include <iostream>
-#include <sstream>
-#include <random>
-#include <vector>
-#include <algorithm>
 #include "use_lib.h"
-#include "Track.cpp"
-#include "Player.cpp"
-#include "AddressBook.cpp"
-#include "Phone.cpp"
-#include "VirtualWindow.cpp"
-#include "VirtualScreen.cpp"
-#include "skillbox_work26_task1.cpp"
-#include "skillbox_work26_task2.cpp"
-#include "skillbox_work26_task3.cpp"
+#include "Track.h"
+#include "Player.h"
+#include "AddressBook.h"
+#include "Phone.h"
+#include "VirtualWindow.h"
+#include "VirtualScreen.h"
+#include "skillbox_work26_task1.h"
+#include "skillbox_work26_task2.h"
+#include "skillbox_work26_task3.h"
 
 
 int main() {
-    setlocale1251();
+    setlocaleRus();
 
     /**
      * ЗАДАНИЕ №1:

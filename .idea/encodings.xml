@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/include/AddressBook.cpp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/include/Phone.cpp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/include/Player.cpp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/include/VirtualScreen.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/AddressBook.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Phone.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Player.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/VirtualScreen.cpp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main.cpp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/skillbox_work26_task1.cpp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/skillbox_work26_task2.cpp" charset="UTF-8" />

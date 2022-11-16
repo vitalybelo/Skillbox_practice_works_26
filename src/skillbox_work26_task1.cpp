@@ -1,4 +1,8 @@
-#pragma once
+#include <iostream>
+#include <vector>
+#include "use_lib.h"
+#include "Track.h"
+#include "Player.h"
 
 /**
  * ЗАДАНИЕ №1:

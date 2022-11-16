@@ -1,4 +1,5 @@
-#pragma once
+#include <iostream>
+#include "use_lib.h"
 #include "AddressBook.h"
 
 bool AddressBook::phoneNumberPuzzle(std::string& number)

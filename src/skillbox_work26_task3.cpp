@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include "use_lib.h"
+#include "VirtualScreen.h"
 
 /**
  * ЗАДАНИЕ №3:

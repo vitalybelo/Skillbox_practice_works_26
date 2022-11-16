@@ -1,4 +1,5 @@
-#pragma once
+#include <iostream>
+#include "use_lib.h"
 #include "Track.h"
 
 Track::Track(const std::string& name, int duration, std::string date_string) {

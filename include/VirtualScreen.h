@@ -1,4 +1,6 @@
 #pragma once
+#include "VirtualWindow.h"
+
 #define SCREEN_SIZE_X 40
 #define SCREEN_SIZE_Y 15
 

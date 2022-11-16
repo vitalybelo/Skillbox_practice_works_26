@@ -1,4 +1,3 @@
-#pragma once
 #include "VirtualWindow.h"
 
 VirtualWindow::VirtualWindow() {}

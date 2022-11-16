@@ -1,4 +1,6 @@
 #pragma once
+#include "use_lib.h"
+#include "Phone.h"
 
 /**
  * ЗАДАНИЕ №2:
